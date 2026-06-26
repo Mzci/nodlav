@@ -1,0 +1,793 @@
+{
+  "project": "Scratch 3.0 — Bloques completos",
+  "lang": "scratch",
+  "version": "3.0",
+  "categories": {
+    "motion":    "#4C97FF",
+    "looks":     "#9966FF",
+    "sound":     "#CF63CF",
+    "events":    "#FFAB19",
+    "control":   "#FFAB19",
+    "sensing":   "#5CB1D6",
+    "operators": "#59C059",
+    "variables": "#FF8C1A",
+    "myblocks":  "#FF6680"
+  },
+  "blocks": {
+
+    "move_steps": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "mover [number:pasos] pasos",
+      "block_type": "a-b",
+      "action": "sprite.move(&pasos&);"
+    },
+    "turn_right": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "girar ↻ [number:grados] grados",
+      "block_type": "a-b",
+      "action": "sprite.turnRight(&grados&);"
+    },
+    "turn_left": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "girar ↺ [number:grados] grados",
+      "block_type": "a-b",
+      "action": "sprite.turnLeft(&grados&);"
+    },
+    "goto_xy": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "ir a x: [number:x] y: [number:y]",
+      "block_type": "a-b",
+      "action": "sprite.goTo(&x&, &y&);"
+    },
+    "goto_sprite": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "ir a [text:destino]",
+      "block_type": "a-b",
+      "action": "sprite.goToTarget('&destino&');"
+    },
+    "glide_secs_xy": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "deslizar en [number:secs] segs a x: [number:x] y: [number:y]",
+      "block_type": "a-b",
+      "action": "await sprite.glide(&secs&, &x&, &y&);"
+    },
+    "glide_secs_to": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "deslizar en [number:secs] segs a [text:destino]",
+      "block_type": "a-b",
+      "action": "await sprite.glideToTarget(&secs&, '&destino&');"
+    },
+    "point_direction": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "apuntar en dirección [number:angulo]",
+      "block_type": "a-b",
+      "action": "sprite.setDirection(&angulo&);"
+    },
+    "point_towards": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "apuntar hacia [text:objetivo]",
+      "block_type": "a-b",
+      "action": "sprite.pointTowards('&objetivo&');"
+    },
+    "change_x": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "cambiar x en [number:dx]",
+      "block_type": "a-b",
+      "action": "sprite.changeX(&dx&);"
+    },
+    "set_x": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "fijar x a [number:x]",
+      "block_type": "a-b",
+      "action": "sprite.setX(&x&);"
+    },
+    "change_y": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "cambiar y en [number:dy]",
+      "block_type": "a-b",
+      "action": "sprite.changeY(&dy&);"
+    },
+    "set_y": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "fijar y a [number:y]",
+      "block_type": "a-b",
+      "action": "sprite.setY(&y&);"
+    },
+    "if_on_edge_bounce": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "rebotar si toca un borde",
+      "block_type": "a-b",
+      "action": "sprite.ifOnEdgeBounce();"
+    },
+    "set_rotation_style": {
+      "category": "motion",
+      "color": "#4C97FF",
+      "text": "fijar estilo de rotación a [text:estilo]",
+      "block_type": "a-b",
+      "action": "sprite.setRotationStyle('&estilo&');",
+      "options": { "estilo": ["girar libremente", "no rotar", "izquierda-derecha"] }
+    },
+
+    "say_for_secs": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "decir [text:mensaje] durante [number:secs] segundos",
+      "block_type": "a-b",
+      "action": "await sprite.sayFor('&mensaje&', &secs&);"
+    },
+    "say": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "decir [text:mensaje]",
+      "block_type": "a-b",
+      "action": "sprite.say('&mensaje&');"
+    },
+    "think_for_secs": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "pensar [text:pensamiento] durante [number:secs] segundos",
+      "block_type": "a-b",
+      "action": "await sprite.thinkFor('&pensamiento&', &secs&);"
+    },
+    "think": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "pensar [text:pensamiento]",
+      "block_type": "a-b",
+      "action": "sprite.think('&pensamiento&');"
+    },
+    "switch_costume": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "cambiar disfraz a [text:disfraz]",
+      "block_type": "a-b",
+      "action": "sprite.switchCostume('&disfraz&');"
+    },
+    "next_costume": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "siguiente disfraz",
+      "block_type": "a-b",
+      "action": "sprite.nextCostume();"
+    },
+    "switch_backdrop": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "cambiar fondo a [text:fondo]",
+      "block_type": "a-b",
+      "action": "stage.switchBackdrop('&fondo&');"
+    },
+    "switch_backdrop_and_wait": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "cambiar fondo a [text:fondo] y esperar",
+      "block_type": "a-b",
+      "action": "await stage.switchBackdropAndWait('&fondo&');"
+    },
+    "next_backdrop": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "siguiente fondo",
+      "block_type": "a-b",
+      "action": "stage.nextBackdrop();"
+    },
+    "change_size": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "cambiar tamaño en [number:delta]",
+      "block_type": "a-b",
+      "action": "sprite.changeSize(&delta&);"
+    },
+    "set_size": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "fijar tamaño a [number:pct] %",
+      "block_type": "a-b",
+      "action": "sprite.setSize(&pct&);"
+    },
+    "change_effect": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "cambiar efecto [text:efecto] en [number:valor]",
+      "block_type": "a-b",
+      "action": "sprite.changeEffect('&efecto&', &valor&);",
+      "options": { "efecto": ["color", "desvanecer", "fantasma", "brillo", "pixelar", "mosaico", "remolino", "ojo de pez"] }
+    },
+    "set_effect": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "fijar efecto [text:efecto] a [number:valor]",
+      "block_type": "a-b",
+      "action": "sprite.setEffect('&efecto&', &valor&);"
+    },
+    "clear_effects": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "quitar efectos gráficos",
+      "block_type": "a-b",
+      "action": "sprite.clearEffects();"
+    },
+    "show": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "mostrar",
+      "block_type": "a-b",
+      "action": "sprite.show();"
+    },
+    "hide": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "esconder",
+      "block_type": "a-b",
+      "action": "sprite.hide();"
+    },
+    "go_to_layer": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "ir a la capa [text:capa]",
+      "block_type": "a-b",
+      "action": "sprite.goToLayer('&capa&');",
+      "options": { "capa": ["delantera", "trasera"] }
+    },
+    "change_layer": {
+      "category": "looks",
+      "color": "#9966FF",
+      "text": "ir [text:dir] [number:n] capas",
+      "block_type": "a-b",
+      "action": "sprite.changeLayer('&dir&', &n&);",
+      "options": { "dir": ["hacia adelante", "hacia atrás"] }
+    },
+
+    "play_sound_until_done": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "tocar sonido [text:sonido] hasta que termine",
+      "block_type": "a-b",
+      "action": "await sound.playUntilDone('&sonido&');"
+    },
+    "play_sound": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "iniciar sonido [text:sonido]",
+      "block_type": "a-b",
+      "action": "sound.play('&sonido&');"
+    },
+    "stop_all_sounds": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "detener todos los sonidos",
+      "block_type": "a-b",
+      "action": "sound.stopAll();"
+    },
+    "change_sound_effect": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "cambiar efecto [text:efecto] en [number:valor]",
+      "block_type": "a-b",
+      "action": "sound.changeEffect('&efecto&', &valor&);",
+      "options": { "efecto": ["tono", "eco"] }
+    },
+    "set_sound_effect": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "fijar efecto [text:efecto] a [number:valor]",
+      "block_type": "a-b",
+      "action": "sound.setEffect('&efecto&', &valor&);"
+    },
+    "clear_sound_effects": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "quitar efectos de sonido",
+      "block_type": "a-b",
+      "action": "sound.clearEffects();"
+    },
+    "change_volume": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "cambiar volumen en [number:delta]",
+      "block_type": "a-b",
+      "action": "sound.changeVolume(&delta&);"
+    },
+    "set_volume": {
+      "category": "sound",
+      "color": "#CF63CF",
+      "text": "fijar volumen a [number:pct] %",
+      "block_type": "a-b",
+      "action": "sound.setVolume(&pct&);"
+    },
+
+    "when_flag_clicked": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "al presionar ▶",
+      "block_type": "event",
+      "action": "runtime.on('flag', async () => {"
+    },
+    "when_key_pressed": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "al presionar tecla [text:tecla]",
+      "block_type": "event",
+      "action": "runtime.on('key:&tecla&', async () => {",
+      "options": { "tecla": ["espacio", "flecha arriba", "flecha abajo", "flecha derecha", "flecha izquierda", "a-z", "0-9"] }
+    },
+    "when_sprite_clicked": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "al hacer clic en este objeto",
+      "block_type": "event",
+      "action": "sprite.onClick(async () => {"
+    },
+    "when_backdrop_switches": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "al cambiar fondo a [text:fondo]",
+      "block_type": "event",
+      "action": "stage.onBackdrop('&fondo&', async () => {"
+    },
+    "when_greater_than": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "cuando [text:sensor] > [number:valor]",
+      "block_type": "event",
+      "action": "runtime.onGreaterThan('&sensor&', &valor&, async () => {",
+      "options": { "sensor": ["volumen", "temporizador"] }
+    },
+    "when_broadcast_received": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "al recibir [text:mensaje]",
+      "block_type": "event",
+      "action": "runtime.onMessage('&mensaje&', async () => {"
+    },
+    "broadcast": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "enviar [text:mensaje]",
+      "block_type": "a-b",
+      "action": "runtime.broadcast('&mensaje&');"
+    },
+    "broadcast_and_wait": {
+      "category": "events",
+      "color": "#FFAB19",
+      "text": "enviar [text:mensaje] y esperar",
+      "block_type": "a-b",
+      "action": "await runtime.broadcastAndWait('&mensaje&');"
+    },
+
+    "wait_secs": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "esperar [number:secs] segundos",
+      "block_type": "a-b",
+      "action": "await wait(&secs&);"
+    },
+    "repeat": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "repetir [number:veces]",
+      "block_type": "loop",
+      "action": "for (let _i = 0; _i < &veces&; _i++) {",
+      "exposes": ["_i"]
+    },
+    "forever": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "por siempre",
+      "block_type": "loop",
+      "action": "while (true) {",
+      "exposes": []
+    },
+    "if_then": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "si [text:condicion] entonces",
+      "block_type": "condition",
+      "action": "if (&condicion&) {"
+    },
+    "if_then_else": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "si [text:condicion] entonces … si no",
+      "block_type": "condition",
+      "action": "if (&condicion&) {"
+    },
+    "wait_until": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "esperar hasta que [text:condicion]",
+      "block_type": "a-b",
+      "action": "await waitUntil(() => &condicion&);"
+    },
+    "repeat_until": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "repetir hasta que [text:condicion]",
+      "block_type": "loop",
+      "action": "while (!(&condicion&)) {"
+    },
+    "stop": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "detener [text:objetivo]",
+      "block_type": "end",
+      "action": "runtime.stop('&objetivo&');",
+      "options": { "objetivo": ["todo", "este script", "otros scripts del objeto"] }
+    },
+    "when_i_start_as_clone": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "al comenzar como clon",
+      "block_type": "event",
+      "action": "sprite.onCloneStart(async () => {"
+    },
+    "create_clone": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "crear clon de [text:objetivo]",
+      "block_type": "a-b",
+      "action": "sprite.createClone('&objetivo&');",
+      "options": { "objetivo": ["este objeto"] }
+    },
+    "delete_clone": {
+      "category": "control",
+      "color": "#FFAB19",
+      "text": "eliminar este clon",
+      "block_type": "end",
+      "action": "sprite.deleteClone();"
+    },
+
+    "touching": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "¿tocando [text:objetivo]?",
+      "block_type": "a-b",
+      "action": "sprite.isTouching('&objetivo&')"
+    },
+    "touching_color": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "¿tocando el color [text:color]?",
+      "block_type": "a-b",
+      "action": "sprite.isTouchingColor('&color&')"
+    },
+    "color_touching_color": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "¿el color [text:color1] toca [text:color2]?",
+      "block_type": "a-b",
+      "action": "sprite.colorTouchingColor('&color1&', '&color2&')"
+    },
+    "distance_to": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "distancia a [text:objetivo]",
+      "block_type": "a-b",
+      "action": "sprite.distanceTo('&objetivo&')"
+    },
+    "ask_and_wait": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "preguntar [text:pregunta] y esperar",
+      "block_type": "a-b",
+      "action": "await runtime.ask('&pregunta&');"
+    },
+    "key_pressed": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "¿tecla [text:tecla] presionada?",
+      "block_type": "a-b",
+      "action": "runtime.isKeyPressed('&tecla&')"
+    },
+    "mouse_down": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "¿ratón presionado?",
+      "block_type": "a-b",
+      "action": "runtime.isMouseDown()"
+    },
+    "set_drag_mode": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "fijar modo de arrastre a [text:modo]",
+      "block_type": "a-b",
+      "action": "sprite.setDragMode('&modo&');",
+      "options": { "modo": ["arrastrable", "no arrastrable"] }
+    },
+    "reset_timer": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "reiniciar temporizador",
+      "block_type": "a-b",
+      "action": "runtime.resetTimer();"
+    },
+    "set_video": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "fijar video a [text:estado]",
+      "block_type": "a-b",
+      "action": "runtime.setVideo('&estado&');",
+      "options": { "estado": ["activado", "desactivado", "en espejo"] }
+    },
+    "set_video_transparency": {
+      "category": "sensing",
+      "color": "#5CB1D6",
+      "text": "fijar transparencia del video a [number:pct]",
+      "block_type": "a-b",
+      "action": "runtime.setVideoTransparency(&pct&);"
+    },
+
+    "add": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[number:a] + [number:b]",
+      "block_type": "a-b",
+      "action": "(&a& + &b&)"
+    },
+    "subtract": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[number:a] - [number:b]",
+      "block_type": "a-b",
+      "action": "(&a& - &b&)"
+    },
+    "multiply": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[number:a] * [number:b]",
+      "block_type": "a-b",
+      "action": "(&a& * &b&)"
+    },
+    "divide": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[number:a] / [number:b]",
+      "block_type": "a-b",
+      "action": "(&a& / &b&)"
+    },
+    "random": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "número al azar entre [number:min] y [number:max]",
+      "block_type": "a-b",
+      "action": "Math.floor(Math.random() * (&max& - &min& + 1)) + &min&"
+    },
+    "greater_than": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:a] > [text:b]",
+      "block_type": "a-b",
+      "action": "(&a& > &b&)"
+    },
+    "less_than": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:a] < [text:b]",
+      "block_type": "a-b",
+      "action": "(&a& < &b&)"
+    },
+    "equals": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:a] = [text:b]",
+      "block_type": "a-b",
+      "action": "(&a& == &b&)"
+    },
+    "and": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:a] y [text:b]",
+      "block_type": "a-b",
+      "action": "(&a& && &b&)"
+    },
+    "or": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:a] o [text:b]",
+      "block_type": "a-b",
+      "action": "(&a& || &b&)"
+    },
+    "not": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "no [text:a]",
+      "block_type": "a-b",
+      "action": "(!(&a&))"
+    },
+    "join": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "unir [text:a] y [text:b]",
+      "block_type": "a-b",
+      "action": "('&a&' + '&b&')"
+    },
+    "letter_of": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "letra [number:n] de [text:cadena]",
+      "block_type": "a-b",
+      "action": "('&cadena&')[&n& - 1]"
+    },
+    "length_of": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "longitud de [text:cadena]",
+      "block_type": "a-b",
+      "action": "('&cadena&').length"
+    },
+    "contains": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:cadena] contiene [text:sub]",
+      "block_type": "a-b",
+      "action": "('&cadena&').includes('&sub&')"
+    },
+    "modulo": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[number:a] módulo [number:b]",
+      "block_type": "a-b",
+      "action": "(&a& % &b&)"
+    },
+    "round": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "redondear [number:n]",
+      "block_type": "a-b",
+      "action": "Math.round(&n&)"
+    },
+    "mathop": {
+      "category": "operators",
+      "color": "#59C059",
+      "text": "[text:op] de [number:n]",
+      "block_type": "a-b",
+      "action": "Math.&op&(&n&)",
+      "options": { "op": ["abs", "floor", "ceiling", "sqrt", "sin", "cos", "tan", "asin", "acos", "atan", "ln", "log", "e ^", "10 ^"] }
+    },
+
+    "set_variable": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "fijar [text:variable] a [text:valor]",
+      "block_type": "a-b",
+      "action": "$&variable& = &valor&;"
+    },
+    "change_variable": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "cambiar [text:variable] en [number:delta]",
+      "block_type": "a-b",
+      "action": "$&variable& += &delta&;"
+    },
+    "show_variable": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "mostrar variable [text:variable]",
+      "block_type": "a-b",
+      "action": "stage.showVar('&variable&');"
+    },
+    "hide_variable": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "esconder variable [text:variable]",
+      "block_type": "a-b",
+      "action": "stage.hideVar('&variable&');"
+    },
+
+    "add_to_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "añadir [text:item] a [text:lista]",
+      "block_type": "a-b",
+      "action": "$&lista&.push('&item&');"
+    },
+    "delete_from_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "borrar el elemento [text:n] de [text:lista]",
+      "block_type": "a-b",
+      "action": "$&lista&.splice(&n& - 1, 1);",
+      "options": { "n": ["último", "todos"] }
+    },
+    "delete_all_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "borrar todos de [text:lista]",
+      "block_type": "a-b",
+      "action": "$&lista& = [];"
+    },
+    "insert_in_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "insertar [text:item] en el lugar [text:n] de [text:lista]",
+      "block_type": "a-b",
+      "action": "$&lista&.splice(&n& - 1, 0, '&item&');"
+    },
+    "replace_in_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "reemplazar el elemento [text:n] de [text:lista] por [text:item]",
+      "block_type": "a-b",
+      "action": "$&lista&[&n& - 1] = '&item&';"
+    },
+    "item_of_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "elemento [text:n] de [text:lista]",
+      "block_type": "a-b",
+      "action": "$&lista&[&n& - 1]"
+    },
+    "index_in_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "# de [text:item] en [text:lista]",
+      "block_type": "a-b",
+      "action": "($&lista&.indexOf('&item&') + 1)"
+    },
+    "list_length": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "longitud de [text:lista]",
+      "block_type": "a-b",
+      "action": "$&lista&.length"
+    },
+    "list_contains": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "[text:lista] contiene [text:item]",
+      "block_type": "a-b",
+      "action": "$&lista&.includes('&item&')"
+    },
+    "show_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "mostrar lista [text:lista]",
+      "block_type": "a-b",
+      "action": "stage.showList('&lista&');"
+    },
+    "hide_list": {
+      "category": "variables",
+      "color": "#FF8C1A",
+      "text": "esconder lista [text:lista]",
+      "block_type": "a-b",
+      "action": "stage.hideList('&lista&');"
+    },
+
+    "define_block": {
+      "category": "myblocks",
+      "color": "#FF6680",
+      "text": "definir [text:nombre]",
+      "block_type": "event",
+      "action": "function &nombre&() {"
+    },
+    "call_block": {
+      "category": "myblocks",
+      "color": "#FF6680",
+      "text": "llamar [text:nombre]",
+      "block_type": "a-b",
+      "action": "&nombre&();"
+    },
+
+    "comment": {
+      "category": "meta",
+      "color": "#888888",
+      "text": "// [text:nota]",
+      "block_type": "comment",
+      "action": "// &nota&"
+    }
+  }
+}

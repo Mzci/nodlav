@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nodlav</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<div id="topbar">
+  <div class="logo">nodlav</div>
+  <div class="sep"></div>
+  <input id="project-name" placeholder="sin título" value="">
+  <div class="sep"></div>
+  <span id="lang-badge">—</span>
+  <select id="lang-selector" onchange="changeLanguage()">
+    <option value="js">JavaScript</option>
+    <option value="py">Python</option>
+    <option value="cpp">C++</option>
+    <option value="php">PHP</option>
+  </select>
+  <div class="sep"></div>
+  <button class="primary" onclick="runBlocks()">▶ Run</button>
+  <button onclick="exportCode()">⬇ Código</button>
+  <button onclick="toggleCodePanel()">◧ Código en vivo</button>
+  <button onclick="exportProject()">⬇ Proyecto JSON</button>
+  <button onclick="importProject()">⬆ Importar proyecto</button>
+  <button class="danger" onclick="clearCanvas()">🗑 Limpiar</button>
+  <div class="spacer"></div>
+  <button onclick="openModal()">Cargar definición</button>
+</div>
+
+<div id="layout">
+  <div id="tray">
+    <div id="tray-header">
+      <span>Bloques</span>
+      <button id="load-json-btn" onclick="openModal()">+ JSON</button>
+    </div>
+    <div id="tray-categories"></div>
+    <div id="tray-blocks">
+      <div id="tray-empty">
+        Cargá un JSON de definición para ver los bloques disponibles.<br><br>
+        <a onclick="loadExample()">Cargar ejemplo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="canvas">
+    <svg id="wsvg"></svg>
+    <div id="world"></div>
+  </div>
+
+  <div id="code-panel">
+    <div id="code-header">
+      <span>Código generado</span>
+      <button id="code-close" onclick="toggleCodePanel()">×</button>
+    </div>
+    <pre id="code-content"><code></code></pre>
+  </div>
+</div>
+
+<div id="output-panel">
+  <div id="out-header">
+    <div id="out-tabs">
+      <button class="out-tab active" onclick="switchTab('console')">Consola</button>
+      <button class="out-tab" onclick="switchTab('code')">Código generado</button>
+    </div>
+    <button id="out-close" onclick="closeOutput()">×</button>
+  </div>
+  <div id="out-body"></div>
+</div>
+
+<div id="ctx">
+  <div onclick="ctxDel()">🗑 Borrar bloque</div>
+  <div onclick="ctxDisconn()">✂ Desconectar</div>
+  <hr>
+  <div onclick="closeCtx()">✕ Cerrar</div>
+</div>
+
+<div id="modal-overlay">
+  <div id="modal">
+    <div id="modal-head">
+      <span>Definición de bloques (JSON)</span>
+      <small>Estructurá tu propio motor</small>
+      <button id="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div id="modal-body">
+      <textarea id="json-textarea" spellcheck="false" placeholder='Pegá tu JSON de definición aquí...'></textarea>
+    </div>
+    <div id="modal-foot">
+      <button class="btn-example btn-cancel" onclick="loadExample()">Cargar ejemplo</button>
+      <span id="modal-error"></span>
+      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      <button class="btn-load" onclick="applyJSON()">Cargar →</button>
+    </div>
+  </div>
+</div>
+
+<div id="tip"></div>
+<script src="src/language-templates.js"></script>
+<script src="src/block-types.js"></script>
+<script src="src/state.js"></script>
+<script src="src/utils.js"></script>
+<script src="src/block-rendering.js"></script>
+<script src="src/wiring.js"></script>
+<script src="src/block-creation.js"></script>
+<script src="src/mouse-events.js"></script>
+<script src="src/tray.js"></script>
+<script src="src/code-generation.js"></script>
+<script src="src/code-panel.js"></script>
+<script src="src/project-io.js"></script>
+<script src="src/language-switcher.js"></script>
+<script src="src/modal.js"></script>
+<script src="src/output-panel.js"></script>
+<script src="src/context-menu.js"></script>
+<script src="src/script.js"></script>
+</body>
+</html>
